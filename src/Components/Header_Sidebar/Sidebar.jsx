@@ -1,4 +1,4 @@
-import { MdAttachMoney, MdDashboardCustomize, MdOutlineCategory } from "react-icons/md";
+import { MdAttachMoney, MdDashboardCustomize, MdOutlineStickyNote2 } from "react-icons/md";
 import { HiMiniUsers } from "react-icons/hi2";
 import { FaHandHoldingUsd } from "react-icons/fa";
 import { FaRegNewspaper } from "react-icons/fa6";
@@ -30,6 +30,12 @@ const Sidebar = () => {
                         <li className="dropdown_list">
                             <NavLink to='/admission-table' className="dropdown_btn">
                                 <span className="dropdown_list_name"><FaRegNewspaper className="dropdown_list_icon" />New Admission</span>
+                            </NavLink>
+                        </li>
+
+                        <li className="dropdown_list">
+                            <NavLink to='/notice-table' className="dropdown_btn">
+                                <span className="dropdown_list_name"><MdOutlineStickyNote2 className="dropdown_list_icon" />Notices</span>
                             </NavLink>
                         </li>
 
