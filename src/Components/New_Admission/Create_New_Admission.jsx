@@ -6,7 +6,7 @@ const Create_New_Admission = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [error_message, setError_message] = useState({});
-  const [admission, setAdmission] = useState({ name: "", email: "", phone: "", subject: "", Address: "", blood_group: "", attachment: null });
+  const [admission, setAdmission] = useState({ admission_date: "", student_name_en: "", student_name_bn: "", date_of_birth: "", birth_certificate_no: "", nid: "", gender: "", blood_group: "", religion: "", phone_number: "", email: "", nationality: "", previous_class_details: "", class_applying_for: "", fee_category: "", father_name_en: "", father_name_bn: "", father_nid: "", father_occupation: "", father_contact: "", mother_name_en: "", mother_name_bn: "", mother_nid: "", mother_occupation: "", mother_contact: "", guardian_name: "", guardian_relation: "", guardian_contact: "", present_address: "", permanent_address: "", district: "", upazila: "", union: "", student_photo: null, birth_certificate_doc: null, father_nid_doc: null, mother_nid_doc: null, transfer_certificate: null });
 
   const handleChange = (event) => {
     const { name, value, files, type } = event.target;
