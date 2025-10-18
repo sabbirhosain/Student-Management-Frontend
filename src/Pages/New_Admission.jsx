@@ -2,8 +2,10 @@ import Layout from '../Layout/Layout'
 import { Link } from 'react-router-dom'
 import { MdFormatListBulletedAdd } from 'react-icons/md'
 import Table_New_Admission from '../Components/New_Admission/Table_New_Admission'
+import { useAdmission_Context } from '../Context/Admission_Context'
 
 const New_Admission = () => {
+    const { updateAdmissionState } = useAdmission_Context()
     return (
         <Layout>
             <section className=''>
@@ -16,7 +18,7 @@ const New_Admission = () => {
                     <div className="col-md-9"></div>
                     <div className="col-md-3">
                         <div className='w-100'>
-                            <input type="search" className="form-control rounded-0" placeholder="Search Hear..." />
+                            <input type="search" onChange={(event) => updateAdmissionState({ search: event.target.value })} className="form-control rounded-0" placeholder="Search Hear..." />
                         </div>
                     </div>
                 </div>

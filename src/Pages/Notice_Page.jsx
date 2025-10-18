@@ -2,8 +2,10 @@ import Layout from '../Layout/Layout'
 import { Link } from 'react-router-dom'
 import { MdFormatListBulletedAdd } from 'react-icons/md'
 import Table_Notice from '../Components/Notices/Table_Notice'
+import { useNotice_Context } from '../Context/Notice_Context'
 
 const Notice_Page = () => {
+    const { updateNoticeState } = useNotice_Context()
     return (
         <Layout>
             <section className=''>
@@ -16,7 +18,7 @@ const Notice_Page = () => {
                     <div className="col-md-9"></div>
                     <div className="col-md-3">
                         <div className='w-100'>
-                            <input type="search" className="form-control rounded-0" placeholder="Search Hear..." />
+                            <input type="search" onChange={(event) => updateNoticeState({ search: event.target.value })} className="form-control rounded-0" placeholder="Search Hear..." />
                         </div>
                     </div>
                 </div>

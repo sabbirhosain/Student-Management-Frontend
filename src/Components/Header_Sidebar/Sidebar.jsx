@@ -1,6 +1,7 @@
 import { MdAttachMoney, MdDashboardCustomize, MdOutlineStickyNote2 } from "react-icons/md";
-import { HiMiniUsers } from "react-icons/hi2";
+import { HiMiniUsers, HiMiniAcademicCap } from "react-icons/hi2";
 import { FaHandHoldingUsd } from "react-icons/fa";
+import { GiTeacher } from "react-icons/gi";
 import { FaRegNewspaper } from "react-icons/fa6";
 import { CiSettings } from "react-icons/ci";
 import { IoIosArrowDown, IoIosStarHalf } from "react-icons/io";
@@ -39,20 +40,27 @@ const Sidebar = () => {
                             </NavLink>
                         </li>
 
-                        {/* <div className="accordion accordion-flush" id="accordionFlushExample">
+                        <li className="dropdown_list">
+                            <NavLink to='/teacher-table' className="dropdown_btn">
+                                <span className="dropdown_list_name"><GiTeacher className="dropdown_list_icon" />Teachers</span>
+                            </NavLink>
+                        </li>
+
+                        <div className="accordion accordion-flush" id="accordionFlushExample">
                             <li className="dropdown_list">
                                 <button className="dropdown_btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse1" aria-expanded="false" aria-controls="flush-collapse1">
                                     <span className="dropdown_list_name">
-                                        <IoIosStarHalf className="dropdown_list_icon" />Products</span>
+                                        <HiMiniAcademicCap className="dropdown_list_icon" />Academy Info</span>
                                     <IoIosArrowDown className="dropdown_icon" />
                                 </button>
 
-                                <div id="flush-collapse1" className={URL.pathname === "/product-table" || URL.pathname === "/purchase-table" ? `accordion-collapse collapse show` : `accordion-collapse collapse hide`} aria-labelledby="flush-headingPaymenta" data-bs-parent="#accordionFlushExample">
-                                    <NavLink to='/product-table' className="dropdown_link"><VscArrowSmallRight />Product</NavLink>
-                                    <NavLink to='/purchase-table' className="dropdown_link"><VscArrowSmallRight />Purchase</NavLink>
+                                <div id="flush-collapse1" className={URL.pathname === "/class-table" || URL.pathname === "/subject-table" || URL.pathname === "/section-table" ? `accordion-collapse collapse show` : `accordion-collapse collapse hide`} aria-labelledby="flush-headingPaymenta" data-bs-parent="#accordionFlushExample">
+                                    <NavLink to='/class-table' className="dropdown_link"><VscArrowSmallRight />Class</NavLink>
+                                    <NavLink to='/subject-table' className="dropdown_link"><VscArrowSmallRight />Subject</NavLink>
+                                    <NavLink to='/section-table' className="dropdown_link"><VscArrowSmallRight />Section</NavLink>
                                 </div>
                             </li>
-                        </div> */}
+                        </div>
 
                         <li className="dropdown_list">
                             <NavLink to='/profile-settings' className="dropdown_btn">

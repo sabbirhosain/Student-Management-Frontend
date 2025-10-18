@@ -50,8 +50,8 @@ const Table_New_Admission = () => {
       selector: row => row.blood_group
     },
     {
-      name: "Religion",
-      selector: row => row.religion
+      name: "Status",
+      selector: row => row.admission_status
     },
     {
       name: "Action",
