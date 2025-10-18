@@ -43,6 +43,25 @@ const Update_Teacher = () => {
                   <input type="text" name="subject" onChange={handleChange} className='form-control rounded-0' disabled={loading} required />
                 </div>
 
+                <div className="col-md-6 mb-3">
+                  <label className='form-label'>Image</label>
+                  <input type="file" onChange={handleChange} className='form-control rounded-0' disabled={loading} required />
+                </div>
+
+                <div className="col-md-6 mb-3">
+                  <label className='form-label'>Blood Group</label>
+                  <select className="form-select rounded-0" disabled={loading} required>
+                    <option value="">Select Group</option>
+                    <option value="a+"> A+ </option>
+                    <option value="a-"> A- </option>
+                    <option value="b+"> B+</option>
+                    <option value="b-"> B- </option>
+                    <option value="ab+"> AB+ </option>
+                    <option value="ab-"> AB- </option>
+                    <option value="o+"> O+ </option>
+                    <option value="o-"> O- </option>
+                  </select>
+                </div>
               </div>
 
               <div className="row">

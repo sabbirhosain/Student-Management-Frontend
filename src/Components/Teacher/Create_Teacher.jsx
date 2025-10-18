@@ -53,9 +53,14 @@ const Create_Teacher = () => {
                   <label className='form-label'>Blood Group</label>
                   <select className="form-select rounded-0" disabled={loading} required>
                     <option value="">Select Group</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <option value="a+"> A+ </option>
+                    <option value="a-"> A- </option>
+                    <option value="b+"> B+</option>
+                    <option value="b-"> B- </option>
+                    <option value="ab+"> AB+ </option>
+                    <option value="ab-"> AB- </option>
+                    <option value="o+"> O+ </option>
+                    <option value="o-"> O- </option>
                   </select>
                 </div>
 
