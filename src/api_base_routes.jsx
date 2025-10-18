@@ -28,7 +28,7 @@ export const update_subject = import.meta.env.VITE_API_URL + "/api/v1/subjects";
 export const delete_subject = import.meta.env.VITE_API_URL + "/api/v1/subjects";
 
 export const create_teacher = import.meta.env.VITE_API_URL + "/api/v1/teachers";
-export const show_teacher = import.meta.env.VITE_API_URL + "/api/v1/teachers";
+export const show_teacher = import.meta.env.VITE_API_URL + "/api/v1/teachers/";
 export const single_teacher = import.meta.env.VITE_API_URL + "/api/v1/teachers";
 export const update_teacher = import.meta.env.VITE_API_URL + "/api/v1/teachers";
 export const delete_teacher = import.meta.env.VITE_API_URL + "/api/v1/teachers";

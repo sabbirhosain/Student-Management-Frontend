@@ -25,7 +25,7 @@ const Header = () => {
                 <hr className="dropdown-divider p-0 m-0" />
                 <li><Link to='#' className="dropdown-item d-flex align-items-center gap-2"><CgProfile />Profile</Link></li>
                 <hr className="dropdown-divider p-0 m-0" />
-                <li> <Link to={"/settings"} className="dropdown-item d-flex align-items-center gap-2" ><SlSettings />Setting</Link></li>
+                <li> <Link to={"/profile-settings"} className="dropdown-item d-flex align-items-center gap-2" ><SlSettings />Setting</Link></li>
               </ul>
 
             </div>

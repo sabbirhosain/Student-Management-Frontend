@@ -2,8 +2,10 @@ import Layout from '../Layout/Layout'
 import { Link } from 'react-router-dom'
 import { MdFormatListBulletedAdd } from 'react-icons/md'
 import Table_Class from '../Components/Class/Table_Class'
+import { useAcademy_Info_Context } from '../Context/Academy_Info_Context'
 
 const Class_Page = () => {
+  const { updateClassState } = useAcademy_Info_Context()
   return (
     <Layout>
       <section className=''>
@@ -16,7 +18,7 @@ const Class_Page = () => {
           <div className="col-md-9"></div>
           <div className="col-md-3">
             <div className='w-100'>
-              <input type="search" onChange={(event) => updateNoticeState({ search: event.target.value })} className="form-control rounded-0" placeholder="Search Hear..." />
+              <input type="search" onChange={(event) => updateClassState({ search: event.target.value })} className="form-control rounded-0" placeholder="Search Hear..." />
             </div>
           </div>
         </div>
