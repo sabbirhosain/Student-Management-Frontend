@@ -66,13 +66,6 @@ const App = () => {
         <Route path="/subject-view/:id" element={<View_Subject />} />
 
 
-
-
-
-
-
-
-
         <Route path="/profile-settings" element={<Settings_Page />} />
       </Routes>
     </>

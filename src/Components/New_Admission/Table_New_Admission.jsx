@@ -7,7 +7,7 @@ import { useAdmission_Context } from '../../Context/Admission_Context'
 
 const Table_New_Admission = () => {
   const { admission, fetchAdmissionData } = useAdmission_Context()
-  useEffect(() => { fetchAdmissionData(1) }, [admission.search, admission.status]);
+  useEffect(() => { fetchAdmissionData(1) }, [admission.search]);
   const onPageChange = (page) => { fetchAdmissionData(page) };
 
 

@@ -5,8 +5,8 @@ import axios from 'axios'
 
 const Admission_Context_Provider = createContext()
 const Admission_Context = ({ children }) => {
-
-    const [admission, setAdmission] = useState({ isLoading: false, data: [], pagination: null, search: '', status: '', error_message: null })
+    
+    const [admission, setAdmission] = useState({ isLoading: false, data: [], pagination: null, search: '', error_message: null })
     const updateAdmissionState = (newState) => { setAdmission(prev => ({ ...prev, ...newState })) };
 
     const fetchAdmissionData = async (page) => {
@@ -15,6 +15,7 @@ const Admission_Context = ({ children }) => {
             const response = await axios.get(show_admission, {
                 params: { search: admission.search, page: page }
             })
+
             if (response && response.data) {
                 updateAdmissionState({
                     data: response.data.payload || [],
