@@ -42,12 +42,12 @@ const Table_Section = () => {
       <>
         <DataTable
           columns={columns}
-          data={section.data?.results?.data}
+          data={section.data}
           pagination
           paginationServer
           paginationComponentOptions={{ noRowsPerPage: true }}
           progressPending={section.isLoading}
-          paginationTotalRows={section.count}
+          paginationTotalRows={section.pagination?.total_data}
           onChangePage={onPageChange}
         />
       </>

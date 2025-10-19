@@ -58,12 +58,12 @@ const Table_Teacher = () => {
       <>
         <DataTable
           columns={columns}
-          data={teacher.data?.results?.data}
+          data={teacher.data}
           pagination
           paginationServer
           paginationComponentOptions={{ noRowsPerPage: true }}
           progressPending={teacher.isLoading}
-          paginationTotalRows={teacher.count}
+          paginationTotalRows={teacher.pagination?.total_data}
           onChangePage={onPageChange}
         />
       </>

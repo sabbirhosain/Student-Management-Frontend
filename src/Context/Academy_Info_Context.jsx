@@ -5,7 +5,7 @@ import axios from 'axios'
 const Academy_Info_Context_Provider = createContext()
 const Academy_Info_Context = ({ children }) => {
 
-    const [teacher, setTeacher] = useState({ isLoading: false, data: [], search: '', error_message: null })
+    const [teacher, setTeacher] = useState({ isLoading: false, data: [], pagination: null, search: '', error_message: null })
     const updateTeacherState = (newState) => { setTeacher(prev => ({ ...prev, ...newState })) };
 
     const fetchTeacherData = async (page) => {
@@ -16,10 +16,10 @@ const Academy_Info_Context = ({ children }) => {
             })
 
             if (response && response.data) {
-                console.log(response.data);
-
-                const data = response.data || [];
-                updateTeacherState({ data: data });
+                updateTeacherState({
+                    data: response.data.payload || [],
+                    pagination: response.data.pagination || null,
+                });
             }
 
         } catch (error) {
@@ -31,7 +31,7 @@ const Academy_Info_Context = ({ children }) => {
 
     // === Class Data Fetch ===
 
-    const [classs, setClass] = useState({ isLoading: false, data: [], search: '', error_message: null })
+    const [classs, setClass] = useState({ isLoading: false, data: [], pagination: null, search: '', error_message: null })
     const updateClassState = (newState) => { setClass(prev => ({ ...prev, ...newState })) };
 
     const fetchClassData = async (page) => {
@@ -42,8 +42,10 @@ const Academy_Info_Context = ({ children }) => {
             })
 
             if (response && response.data) {
-                const data = response.data || [];
-                updateClassState({ data: data });
+                updateClassState({
+                    data: response.data.payload || [],
+                    pagination: response.data.pagination || null,
+                });
             }
 
         } catch (error) {
@@ -56,7 +58,7 @@ const Academy_Info_Context = ({ children }) => {
 
     // === Subject Data Fetch ===
 
-    const [subject, setSubject] = useState({ isLoading: false, data: [], search: '', error_message: null })
+    const [subject, setSubject] = useState({ isLoading: false, data: [], pagination: null, search: '', error_message: null })
     const updateSubjectState = (newState) => { setSubject(prev => ({ ...prev, ...newState })) };
 
     const fetchSubjectData = async (page) => {
@@ -67,8 +69,10 @@ const Academy_Info_Context = ({ children }) => {
             })
 
             if (response && response.data) {
-                const data = response.data || [];
-                updateSubjectState({ data: data });
+                updateSubjectState({
+                    data: response.data.payload || [],
+                    pagination: response.data.pagination || null,
+                });
             }
 
         } catch (error) {
@@ -80,7 +84,7 @@ const Academy_Info_Context = ({ children }) => {
 
     // === Section Data Fetch ===
 
-    const [section, setSection] = useState({ isLoading: false, data: [], search: '', error_message: null })
+    const [section, setSection] = useState({ isLoading: false, data: [], pagination: null, search: '', error_message: null })
     const updateSectionState = (newState) => { setSection(prev => ({ ...prev, ...newState })) };
 
     const fetchSectionData = async (page) => {
@@ -91,8 +95,10 @@ const Academy_Info_Context = ({ children }) => {
             })
 
             if (response && response.data) {
-                const data = response.data || [];
-                updateSectionState({ data: data });
+                updateSectionState({
+                    data: response.data.payload || [],
+                    pagination: response.data.pagination || null,
+                });
             }
 
         } catch (error) {

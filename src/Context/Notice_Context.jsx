@@ -5,23 +5,21 @@ import axios from "axios";
 const Notice_Context_Provider = createContext()
 const Notice_Context = ({ children }) => {
 
-    const [notice, setNotice] = useState({ isLoading: false, data: [], search: '', status: '', error_message: null })
+    const [notice, setNotice] = useState({ isLoading: false, data: [], pagination: null, search: '', error_message: null })
     const updateNoticeState = (newState) => { setNotice(prev => ({ ...prev, ...newState })) };
 
     const fetchNoticeData = async (page) => {
         try {
             updateNoticeState({ isLoading: true, error_message: null });
             const response = await axios.get(show_notice, {
-                params: {
-                    search: notice.search,
-                    status: notice.status,
-                    page: page
-                }
+                params: { search: notice.search, page: page }
             })
 
             if (response && response.data) {
-                const data = response.data || [];
-                updateNoticeState({ data: data });
+                updateNoticeState({
+                    data: response.data.payload || [],
+                    pagination: response.data.pagination || null,
+                });
             }
 
         } catch (error) {

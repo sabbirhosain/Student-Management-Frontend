@@ -21,7 +21,7 @@ const Table_Subject = () => {
       selector: row => row.name
     },
     {
-      name: "Subject Name (EN)",
+      name: "Subject Nickname",
       selector: row => row.nick_name
     },
     {
@@ -42,12 +42,12 @@ const Table_Subject = () => {
       <>
         <DataTable
           columns={columns}
-          data={subject.data?.results?.data}
+          data={subject.data}
           pagination
           paginationServer
           paginationComponentOptions={{ noRowsPerPage: true }}
           progressPending={subject.isLoading}
-          paginationTotalRows={subject.count}
+          paginationTotalRows={subject.pagination?.total_data}
           onChangePage={onPageChange}
         />
       </>

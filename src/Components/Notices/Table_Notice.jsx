@@ -8,7 +8,7 @@ import { useNotice_Context } from "../../Context/Notice_Context"
 
 const Table_Notice = () => {
   const { notice, fetchNoticeData } = useNotice_Context()
-  useEffect(() => { fetchNoticeData(1) }, [notice.search, notice.status]);
+  useEffect(() => { fetchNoticeData(1) }, [notice.search]);
   const onPageChange = (page) => { fetchNoticeData(page) };
 
   const columns = [
@@ -55,12 +55,12 @@ const Table_Notice = () => {
       <>
         <DataTable
           columns={columns}
-          data={notice.data?.results?.data}
+          data={notice.data}
           pagination
           paginationServer
           paginationComponentOptions={{ noRowsPerPage: true }}
           progressPending={notice.isLoading}
-          paginationTotalRows={notice.count}
+          paginationTotalRows={notice.pagination?.total_data}
           onChangePage={onPageChange}
         />
       </>
