@@ -71,12 +71,12 @@ const Table_New_Admission = () => {
       <>
         <DataTable
           columns={columns}
-          data={admission.data?.results?.data}
+          data={admission.data}
           pagination
           paginationServer
           paginationComponentOptions={{ noRowsPerPage: true }}
           progressPending={admission.isLoading}
-          paginationTotalRows={admission.count}
+          paginationTotalRows={admission.pagination?.total_data}
           onChangePage={onPageChange}
         />
       </>
